@@ -10,6 +10,7 @@ include "koneksi.php";
 
 <head>
     <title>APLIKASI KASIR SEPHORA</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -17,7 +18,7 @@ include "koneksi.php";
     <p>Jabatan : <?php echo $_SESSION['jabatan']; ?></p>
 
     <a href="barang.php">Data Barang</a> |
-    <a href="pembelian.php">Pembelian</a> |
+    <a href="penjualan.php">Pembelian</a> |
     <a href="laporan.php">Laporan</a> |
     <?php if ($_SESSION['jabatan'] == "administrator") { ?>
         <a href="register.php">Registrasi</a> |
@@ -26,8 +27,8 @@ include "koneksi.php";
 
     <br><br>
     <?php
-    $barang = mysqli_query($koneksi, "SELECT * FROM barang");
-    echo "Jumlah Barang : " . mysqli_num_rows($barang);
+    $produk = mysqli_query($koneksi, "SELECT * FROM produk");
+    echo "Jumlah Barang : " . mysqli_num_rows($produk);
     ?>
 </body>
 
